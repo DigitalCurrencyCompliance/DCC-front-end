@@ -1,0 +1,23 @@
+{
+  "name": "digital-currency-compliance",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "ajv": "^6.5.3",
+    "bootstrap": "^4.1.3",
+    "jquery": "^1.9.1",
+    "popper.js": "^1.14.4",
+    "react": "^16.5.0",
+    "react-bootstrap": "^0.32.4",
+    "react-dom": "^16.5.0",
+    "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "1.1.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
