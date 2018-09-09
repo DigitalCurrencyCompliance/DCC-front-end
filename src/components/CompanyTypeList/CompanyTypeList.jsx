@@ -36,8 +36,8 @@ export default class CompanyTypeList extends Component {
     const { selectedOption } = this.state;
 
     return (
-      <div className="company-type">
-        <div className="header">CompanyTypeList</div>
+      <div className="card my-3 p-4">
+        <div className="header">Company Type</div>
         <Select
           value={selectedOption}
           onChange={this.handleChange}

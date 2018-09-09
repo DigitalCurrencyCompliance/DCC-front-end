@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 
-export default function ({ currency, address, setAddress, balance }) {
+export default function CurrencyAddressItem({ currency, address, setAddress, balance }) {
   return (
-    <div className="row">
+    <div className="list-group-item">
       <div className="col">{currency}</div>
       <div
         className="col"
@@ -15,7 +15,7 @@ export default function ({ currency, address, setAddress, balance }) {
   );
 }
 
-.propTypes = {
+CurrencyAddressItem.propTypes = {
   currency: PropTypes.string,
   address: PropTypes.string,
   setAddress: PropTypes.func,

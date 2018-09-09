@@ -17,7 +17,7 @@ export default class BizApp extends Component {
     this.state = {
 
     };
-  }
+  }  
 
   render() {
     return (

@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import request from 'superagent';
 import ProfileName from './ProfileName';
 import CurrencyAddressList from '../CurrencyAddress/CurrencyAddressList';
 
 export default class BusinessPortal extends Component {
 
   static propTypes = {
-    ein: PropTypes.string,
+    id: PropTypes.string,
   };
 
   constructor(props) {
@@ -21,17 +22,18 @@ export default class BusinessPortal extends Component {
     // this.getData();
   }
 
-  getData() {
-
-  }
-
   render() {
     return (
       <div>
         <div className="business-portal">
           <div>BusinessPortal</div>
-          <ProfileName />
-          <CurrencyAddressList />
+          <ProfileName
+            name={this.state.name}
+            isBiz={true}
+          />
+          <CurrencyAddressList
+            id={this.props.id}
+          />
         </div>
       </div>
     );

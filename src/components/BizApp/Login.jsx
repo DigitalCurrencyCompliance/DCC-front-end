@@ -7,7 +7,7 @@ import TextInput from '../TextInput';
 export default class Login extends Component {
 
   static propTypes = {
-
+    passUpID: PropTypes.func,
   };
 
   constructor(props) {
@@ -16,6 +16,7 @@ export default class Login extends Component {
     this.state = {
       ein: '',
       password: '',
+      navigate: null,
     };
   }
 
@@ -25,23 +26,31 @@ export default class Login extends Component {
     }
   }
 
+  commenceLogin = () => {
+    this.props.passUpID(this.state.ein);
+    this.setState({ navigate: 'gogogo' })
+  }
+
   render() {
+    if (this.state.navigate === 'gogogo') {
+      return <Redirect to="/business/portal" />
+    }
     return (
       <div className="login">
-        <div className="d-flex justify-content-around">
-
-          <Button
-            bsStyle="primary"
-            className="button-size"
-          >
-            <NavLink
-              to="/business/register"
-              className="nav-link"
+        <div className="d-flex justify-content-around align-items-end">
+          {/* <div className="col justify-content-end"> */}
+            <Button
+              bsStyle="primary"
+              className="button-size"
             >
-              Register
-            </NavLink>
-          </Button>
-
+              <NavLink
+                to="/business/register"
+                className="nav-link"
+              >
+                Register
+              </NavLink>
+            </Button>
+          {/* </div> */}
           <div className="flex-column justify-content-start">
             <TextInput
               htmlId="ein"
@@ -61,14 +70,17 @@ export default class Login extends Component {
               value={this.state.password}
               onChange={this.handleTextChange}
             />
-            <Button bsStyle="primary">
-              <NavLink
+            <Button
+              bsStyle="primary mt-3"
+              onClick={this.commenceLogin}
+            >
+              {/* <NavLink
                 // to={`/business/${business.name}`}
                 to={`/business/portal/${this.state.ein}`}
                 className="nav-link"
-              >
+              > */}
                 Login In
-              </NavLink>
+              {/* </NavLink> */}
             </Button>
           </div>
 

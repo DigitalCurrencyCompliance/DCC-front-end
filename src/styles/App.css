@@ -1,3 +1,7 @@
+label {
+  margin-top: 1rem;
+}
+
 .App {
   text-align: center;
 }
@@ -67,7 +71,7 @@
 }
 
 .company-type {
-  /*list with items*/
+  width: 60%;
 }
 
 .business-list {
@@ -89,6 +93,10 @@
 }
 
 .business-profile {
+
+}
+
+.address-form {
 
 }
 

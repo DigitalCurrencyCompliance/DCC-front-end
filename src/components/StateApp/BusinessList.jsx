@@ -29,17 +29,9 @@ export default class BusinessList extends Component {
   /* get single biz data  */
   getData = (event) => {
     event.preventDefault();
-    let userId = this.state.userId;
-    let bandsId = this.props.bandsId;
      request
-      .post(`https://ez-tour.herokuapp.com/users/${userId}/bands/${bandsId}/events`)
-      .send({
-        date: this.state.date,
-        venue: this.state.venue,
-        address_line_1: this.state.address_line_1,
-        city: this.state.city,
-        state: this.state.state,
-      })
+      .post(`https://hungry-mouse-68.localtunnel.me/`)
+      .send({ })
       // .set('Authorization', `Token token=${this.state.token}`)
       .end((err, res) =>{
         if (err) {

@@ -3,9 +3,23 @@ import PropTypes from 'prop-types';
 import Label from './Label';
 
 /** Text input with integrated label to enforce consistency in layout, error display, label placement, and required field marker. */
-function TextInput({htmlId, name, label, type = "text", required = false, onChange, placeholder, value, error, children, ...props}) {
+function TextInput({
+  className,
+  htmlId,
+  name,
+  label,
+  type = "text",
+  required = false,
+  onChange,
+  placeholder,
+  value,
+  error,
+  children,
+  readOnly = false,
+  ...props,
+}) {
   return (
-    <div style={{marginBottom: 16}}>
+    <div className={className}>
       <Label htmlFor={htmlId} label={label} required={required} />
       <input
         id={htmlId}
@@ -14,8 +28,10 @@ function TextInput({htmlId, name, label, type = "text", required = false, onChan
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        style={error && {border: 'solid 1px red'}}
-        {...props}/>
+        // style={error && {border: 'solid 1px red'}}
+        style={{width: '100%'}}
+        {...props}
+      />
         {children}
       {error && <div className="error" style={{color: 'red'}}>{error}</div>}
     </div>
