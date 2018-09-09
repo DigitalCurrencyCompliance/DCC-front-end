@@ -70,8 +70,22 @@
   /*list with items*/
 }
 
+.business-list {
+
+}
+
+.business-list-header {
+
+}
+
+.business-list-item {
+  /*margin:*/
+  /*padding:*/
+
+}
+
 .business-portal {
-  
+
 }
 
 .business-profile {
@@ -81,4 +95,8 @@
 .button-size {
   height: 50px;
   margin: 10px;
+}
+
+.spacer {
+  height: 20px;
 }

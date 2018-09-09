@@ -15,16 +15,25 @@ export default class RegisterBusiness extends Component {
     super(props);
 
     this.state = {
-
+      type: {}
     };
+  }
+
+  setCompanyType = (type) => {
+    // get profile form
+    this.setState({ type: type })
   }
 
   render() {
     return (
       <div className="register-business">
         <div className="header">Register Business</div>
-        <CompanyTypeList />
-        <BusinessProfile />
+        <CompanyTypeList
+          sendCompanyType={this.setCompanyType}
+        />
+        <BusinessProfile
+          formType={this.state.type}
+        />
         <DigitalCurrencyList />
         {/* submit button */}
       </div>

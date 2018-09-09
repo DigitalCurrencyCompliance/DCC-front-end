@@ -6,15 +6,30 @@ import Button from 'react-bootstrap/lib/Button';
 export default class Search extends Component {
 
   static propTypes = {
-
+    sendParams: PropTypes.func,
   };
 
   constructor(props) {
     super(props);
 
     this.state = {
-
+      searchFor: '',
+      filterBy: '',
     };
+  }
+
+  handleTextChange = event => {
+    if (this.state[event.target.id] !== undefined) {
+      this.setState({ [event.target.id]: event.target.value })
+    }
+  }
+
+  sendUpParams = (event) => {
+    event.preventDefault();
+    this.props.sendParams({
+      searchFor: this.state.searchFor,
+      filterBy: this.state.filterBy,
+    })
   }
 
   render() {
@@ -43,6 +58,7 @@ export default class Search extends Component {
           <Button
             bsStyle="primary"
             className="button-size"
+            onClick={this.sendUpParams}
           >
             Search
           </Button>
