@@ -22,6 +22,8 @@ export default class BusinessPortal extends Component {
     // this.getData();
   }
 
+
+
   render() {
     return (
       <div>

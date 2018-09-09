@@ -11,6 +11,7 @@ export default class BusinessProfile extends Component {
     state: PropTypes.string,
     postalCode: PropTypes.string,
     readOnly: PropTypes.bool,
+    preName: PropTypes.string,
   };
 
   constructor(props) {

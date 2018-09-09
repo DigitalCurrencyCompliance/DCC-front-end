@@ -9,7 +9,7 @@ export default function CurrencyAddressItem({ currency, address, setAddress, bal
       <div
         className="col"
         onClick={event => setAddress(address)}
-      >{address}</div>
+      ><a>{address}</a></div>
       <div className="col">{balance}</div>
     </div>
   );

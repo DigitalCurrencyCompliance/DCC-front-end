@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import request from 'superagent';
 import CurrencyAddressItem from './CurrencyAddressItem';
+import SingleCurrency from './SingleCurrency/SingleCurrency';
 
 export default class CurrencyAddressList extends Component {
 
@@ -27,8 +28,8 @@ export default class CurrencyAddressList extends Component {
   getCurrencyArray = (id) => {
     // event.preventDefault()
     request
-      .post('https://hungry-mouse-68.localtunnel.me/account/find')
-      .send({ id: id })
+      .post('http://my.aae.co:55555/6ef2c5b8-0561-4837-ac7f-5dc4e4f244fc/dcc7/account/find')
+      .send({ _id: id })
       .end((err, res) =>{
         if (err) {
           console.log(err);
@@ -93,7 +94,7 @@ export default class CurrencyAddressList extends Component {
             address={this.state.singleAddress}
             close={this.close}
           />
-        }
+         }
       </div>
     );
   }

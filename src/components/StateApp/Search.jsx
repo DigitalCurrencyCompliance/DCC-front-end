@@ -25,6 +25,7 @@ export default class Search extends Component {
   }
 
   sendUpParams = (event) => {
+    console.log('SENDUPPARAMS');
     event.preventDefault();
     this.props.sendParams({
       searchFor: this.state.searchFor,

@@ -23,26 +23,26 @@ export default class BusinessList extends Component {
 
   // get results from server
   // componentDidMount() {
-  //
+  //   this.getData();
   // }
 
   /* get single biz data  */
-  getData = (event) => {
-    event.preventDefault();
-     request
-      .post(`https://hungry-mouse-68.localtunnel.me/`)
-      .send({ })
-      // .set('Authorization', `Token token=${this.state.token}`)
-      .end((err, res) =>{
-        if (err) {
-          console.log(err);
-          this.setState({ error: res.body.error });
-        } else {
-          console.log(res);
-          window.location.href = "/dashboard";
-        }
-      })
-  }
+  // getData = () => {
+  //   // event.preventDefault();
+  //    request
+  //     .post(`http://my.aae.co:55555/6ef2c5b8-0561-4837-ac7f-5dc4e4f244fc/dcc7/account/findAll`)
+  //     .send({ })
+  //     // .set('Authorization', `Token token=${this.state.token}`)
+  //     .end((err, res) =>{
+  //       if (err) {
+  //         console.log(err);
+  //         this.setState({ error: res.body.error });
+  //       } else {
+  //         console.log(res);
+  //         this.setState({});
+  //       }
+  //     })
+  // }
 
   setBusiness = (ein) => {
     this.setState({
@@ -59,17 +59,22 @@ export default class BusinessList extends Component {
   generateBusinessList() {
     let businessList = []
     if (this.props.businessesArray !== null && this.props.businessesArray !== undefined) {
-      businessList = this.props.businessesArray.map((infoObject) => {
+      businessList = this.props.businessesArray.map((infoObject, index) => {
+        // console.log('INFOOBJECT', infoObject);
+        console.log('INFOOBJECT.EIN', infoObject.ein);
+        console.log('INFOOBJECT.NAME', infoObject.name);
+        console.log('INFOOBJECT.TYPE', infoObject.type);
         return <BusinessListItem
-            key={infoObject.ein}
-            name={infoObject.name}
-            type={infoObject.type}
+            key={index}
+            name={infoObject.companyName}
+            type={infoObject.companyType}
             ein={infoObject.ein}
             setBusiness={this.setBusiness} // display BusinessPortal
           />
       })
-    } else {
       return businessList
+    } else {
+      console.log("error with ...");
     }
   }
 
@@ -84,6 +89,7 @@ export default class BusinessList extends Component {
             <div className="col business-list-item">Currency</div>
             <div className="col business-list-item">Official Wallet Address</div>
             <div className="col business-list-item">Total</div>
+            <div className="col business-list-item"></div>
           </div>
           <div className="list-group">
 

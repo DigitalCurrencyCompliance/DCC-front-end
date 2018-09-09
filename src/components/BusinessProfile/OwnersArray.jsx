@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import TextInput from '../TextInput';
 import Address from '../Address';
 import OwnerItem from './OwnerItem';
+import Button from 'react-bootstrap/lib/Button';
 
 export default class OwnersArray extends Component {
 
@@ -117,7 +118,7 @@ export default class OwnersArray extends Component {
             { (this.state.name !== '') && this.state.arrayBool ?
               <input
                 id="ownerAddress"
-                type="submit"
+                type="data"
                 className="button"
                 value="Add Owner"
                 onClick={this.pushToArray}
@@ -125,7 +126,7 @@ export default class OwnersArray extends Component {
             :
               <input
                 id="search"
-                type="submit"
+                type="data"
                 className="button disabled"
                 // styleName={`${buttonStyle}`}
                 value="Add Owner"
@@ -134,13 +135,21 @@ export default class OwnersArray extends Component {
               />
             }
             {ownersDisplayInputs}
-            <input
+            {/* <input
               id="ownerAddress"
-              type="submit"
+              type="array"
               className="button"
               value="Done"
               onClick={event => this.props.passArrayUp(this.state.ownersArray)}
-            />
+            /> */}
+            <Button
+              bsStyle="primary"
+              className="button-size"
+              // value="Done Adding Owners"
+              onClick={event => this.props.passArrayUp(this.state.ownersArray)}
+            >
+              Done Adding Owners
+            </Button>
           </div>
         </div>
       </div>

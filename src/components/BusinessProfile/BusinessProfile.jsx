@@ -99,7 +99,10 @@ export default class BusinessProfile extends Component {
   }
 
   setOwnerArray = (ownersArray) => {
-    this.setState({ ownersArray });
+    console.log('OWNERSARRAY', ownersArray);
+    this.setState({
+      ownersArray: ownersArray,
+    });
   }
 
   handleSubmit = (event) => {
@@ -107,7 +110,7 @@ export default class BusinessProfile extends Component {
     // send to DB
     let data = this.state;
     request
-      .post('https://hungry-mouse-68.localtunnel.me/account/newAccount')
+      .post('http://my.aae.co:55555/6ef2c5b8-0561-4837-ac7f-5dc4e4f244fc/dcc7/account/newAccount')
       .send({ data })
       .end((err, res) =>{
         if (err) {
@@ -119,6 +122,10 @@ export default class BusinessProfile extends Component {
           // this.setState({ currencyAddressArray: res });
         }
       })
+  }
+
+  getBusinessProfile = () => {
+
   }
 
   // TODO get pdf forms with fill and docusign

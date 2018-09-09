@@ -18,7 +18,7 @@ export default class OwnerItem extends Component {
 
   render() {
     const { name, address, city, state, postalCode } = this.props.ownerObject;
-    console.log('THIS.PROPS.OWNEROBJECT', this.props.ownerObject);
+    // console.log('THIS.PROPS.OWNEROBJECT', this.props.ownerObject);
     return (
       <div className="row">
         <input

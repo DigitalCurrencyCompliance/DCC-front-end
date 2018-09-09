@@ -1,4 +1,5 @@
-SENDRegisterBusiness = {
+// BusinessProfile
+SEND RegisterBusiness = {
   ein: '',
   password: '',
   companytype: '',
@@ -16,16 +17,20 @@ RETURNS = {
   DAI: 'walletAddress'
 }
 
+// Login
 SEND Login = {
   ein: '',
   password:'',
 }
 RETURNS = {
  // TBD
+ companyName: '',
+ _id: '',
 }
 
+// CurrencyAddressList
 send getCurrencyArray = {
-  ein: ''
+  _id: ''
 }
 RETURNS = [
   {
@@ -38,12 +43,14 @@ RETURNS = [
   ...
 ]
 
-getProfile = {
-  ein: ''
+//
+getBusinessProfile = {
+  _id: ''
 }
 RETURNS = {
   // TBD
 }
+
 
 getTxnByWallet = {
   address: ''
